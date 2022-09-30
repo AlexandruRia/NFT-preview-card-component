@@ -60,18 +60,51 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    box-shadow: 1rem 1rem 4rem hsl(216, 50%, 6%);;
+    box-shadow: 1rem 1rem 4rem hsl(216, 50%, 6%);
+    transition:all ease-in-out 0.5s;
 }
 
 hr {
     border:.05rem solid var(--Very-dark-blue-3)
 }
 
-img {
-    border-radius: .8rem;
+.NFT {
+    border-radius: .8rem; 
+    transition: all ease-out 1s;
+    opacity: 1;
 }
 
-.info-section{
+.img-container {
+    position:relative;
+    border-radius: .85rem; 
+    transition: all 1s ease-out; 
+}
+
+.view-img{
+    position:absolute;
+    opacity:0%;
+    top:40%;
+    left:40%;
+    transition: opacity ease-out 1s;   
+}
+
+.img-container:hover {
+    background-color: hsl(178, 100%, 35%) ;
+}
+
+.img-container:hover .NFT{
+    opacity:0.3;  
+}
+
+.img-container:hover .view-img{
+    opacity:1;
+}
+
+main:hover {
+    transform: scale(1.1);
+}
+
+.info-section {
     padding-top:1rem;
 }
 
@@ -81,28 +114,30 @@ img {
     font-weight: 300;
 }
 
-
 h1 {
     color:var(--White);
     font-weight: 600;
     font-size:1rem;
+    transition: all 0.5s ease-out;
+}
+
+h1:hover {
+    color:var(--Cyan);
 }
 
 .text-container p {
     margin-top: 1rem;
 }
 
-.cost-container {
+.cost-timer-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 1rem 0 1rem 0;
-
 }
 
 .cost, .timer {
     display: flex;
     align-items: center; 
-
 }
 
 .cost img, .timer img {
@@ -112,10 +147,12 @@ h1 {
 .cost p, .timer p {
    font-size: .7rem;
 }
+
 .cost p {
    color:var(--Cyan) ;
    font-weight:400;
 }
+
 .timer {
     justify-self: flex-end;
 }
@@ -135,4 +172,9 @@ h1 {
 
 .user-container span {
     color:var(--White);
+    transition: all 0.5s ease-out;
+}
+
+.user-container span:hover {
+    color:var(--Cyan);
 }
